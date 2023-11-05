@@ -57,6 +57,7 @@ public class BookController {
 	public ResponseEntity<Book> updateBookById(@PathVariable Long id, @RequestBody Book newBookData) {
 		Optional<Book> oldBookData = bookRepo.findById(id);
 		if (oldBookData.isPresent()) {
+			Book a;
 			Book updateBookData = oldBookData.get();
 			updateBookData.setTitle(newBookData.getTitle());
 			
